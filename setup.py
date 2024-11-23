@@ -14,7 +14,7 @@ setup(
     description="A declarative business intelligence library designed for natural language interactions",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/perspective-bi",
+    url="https://github.com/perspective-bi/perspective-bi",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
