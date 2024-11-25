@@ -11,6 +11,7 @@ setup(
         "python-dateutil>=2.8.2",
         "flask>=3.1.0",
         "markdown>=3.0.0",
+        "waitress>=3.0.2",
     ],
     entry_points={
         'console_scripts': [

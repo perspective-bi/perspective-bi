@@ -3,9 +3,21 @@ import sys
 from flask import Flask, render_template_string
 from pathlib import Path
 import plotly.graph_objects as go
-from .markdown import MarkdownContent
+import markdown
 
 app = Flask(__name__)
+
+class MarkdownContent:
+    def __init__(self, content):
+        self.content = content
+        self._html = markdown.markdown(content)
+    
+    def _repr_html_(self):
+        return self._html
+
+def markdown_text(content):
+    """Create markdown content that can be displayed in the report"""
+    return MarkdownContent(content)
 
 def load_module_from_file(file_path):
     """Dynamically load a Python module from file path."""
@@ -59,4 +71,5 @@ def run_server(file_path, port=3000):
         return render_template_string(template, content=''.join(content))
 
     print(f"\nServer running at http://localhost:{port}")
-    app.run(host='localhost', port=port, debug=True)
+    from waitress import serve
+    serve(app, host='localhost', port=port, _quiet=True)
