@@ -9,7 +9,15 @@ setup(
         "plotly>=5.13.0",
         "numpy>=1.24.0",
         "python-dateutil>=2.8.2",
+        "flask>=3.1.0",
+        "markdown>=3.0.0",
+        "waitress>=3.0.2",
     ],
+    entry_points={
+        'console_scripts': [
+            'perspective-bi=perspective_bi.cli:main',
+        ],
+    },
     author="Robert Ritz",
     description="A declarative business intelligence library designed for natural language interactions",
     long_description=open("README.md").read(),

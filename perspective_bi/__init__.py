@@ -6,6 +6,7 @@ from .charts import (
     pie,
     histogram
 )
+from .server import run_server, markdown_text
 
 __version__ = "0.1.0"
 
@@ -16,5 +17,7 @@ __all__ = [
     "line",
     "scatter",
     "pie",
-    "histogram"
+    "histogram",
+    "run_server",
+    "markdown_text"
 ]
